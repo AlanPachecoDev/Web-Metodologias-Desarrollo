@@ -1,0 +1,357 @@
+<!-- Para que el agregar se muestre como un componente encima del resto -->
+<div *ngIf="mostrarAgregar">
+    <div class="close">
+        <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()"
+            style="background-color: #79a6fe; color: white;">
+            X
+        </button>
+    </div>
+    <app-nuevo-centro-costo></app-nuevo-centro-costo>
+</div>
+
+
+<div class="cardContainer">
+
+    <div class="allTable">
+        <mat-card class="tableCard">
+            <mat-card-title class="titulo">Centros de Costos</mat-card-title>
+            <div class="tabla">
+                <table mat-table [dataSource]="costos" class="fl-table">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="NombreCentroCostos">
+                        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.NombreCentroCostos}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Editar">
+                        <th mat-header-cell *matHeaderCellDef> Editar </th>
+                        <td mat-cell *matCellDef="let element;">
+                            <button mat-raised-button color="edit" focusable="false" (click)="btnEditar(element)">
+                                <mat-icon fontIcon="edit">Editar</mat-icon>
+                                Editar
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Borrar">
+                        <th mat-header-cell *matHeaderCellDef> Borrar </th>
+                        <td mat-cell *matCellDef="let element;">
+                            <button mat-raised-button color="warn" focusable="false" (click)="btnBorrar(element)">
+                                <mat-icon fontIcon="delete">Borrar</mat-icon>
+                                Borrar
+                            </button>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                </table>
+            </div>
+        </mat-card>
+    </div>
+
+
+    <!-- emisores -->
+    <div class="allTable">
+        <mat-card class="tableCard">
+
+            <mat-card-title class="titulo">Emisores</mat-card-title>
+
+
+            <div class="tabla">
+                <table mat-table [dataSource]="emisores" class="fl-table">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="NombreEmisor">
+                        <th mat-header-cell *matHeaderCellDef> Nombre Emisor </th>
+                        <td mat-cell *matCellDef="let element"> {{element.NombreEmisor}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Ruc">
+                        <th mat-header-cell *matHeaderCellDef> Ruc </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Ruc}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="columnasEmisores"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnasEmisores;"></tr>
+
+                </table>
+            </div>
+        </mat-card>
+    </div>
+
+    <!-- Tipo Trabajador -->
+    <div class="allTable">
+        <mat-card class="tableCard">
+            <mat-card-title class="titulo">Tipo Trabajador</mat-card-title>
+            <div class="tabla">
+                <table mat-table [dataSource]="tipoTrabajador" class="fl-table">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Código </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="columnasVarias"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnasVarias;"></tr>
+
+                </table>
+            </div>
+        </mat-card>
+    </div>
+
+    <!-- Géneros -->
+    <div class="allTable">
+        <mat-card class="tableCard">
+
+            <mat-card-title class="titulo">Géneros</mat-card-title>
+
+
+            <div class="tabla">
+                <table mat-table [dataSource]="generos" class="fl-table">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef> Código </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="columnasVarias"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnasVarias;"></tr>
+
+                </table>
+            </div>
+        </mat-card>
+    </div>
+
+    <!-- Estados Civiles -->
+    <div class="allTable">
+        <mat-card class="tableCard">
+
+            <mat-card-title class="titulo">Estados Civiles</mat-card-title>
+
+
+            <div class="tabla">
+                <table mat-table [dataSource]="estadosCiviles" class="fl-table">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef> Código </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="columnasVarias"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnasVarias;"></tr>
+
+                </table>
+            </div>
+        </mat-card>
+    </div>
+
+    <!-- Tipos Cese -->
+    <div class="allTable">
+    <mat-card class="tableCard">
+
+        <mat-card-title class="titulo">Tipos Cese</mat-card-title>
+
+
+        <div class="tabla">
+            <table mat-table [dataSource]="tiposCese" class="fl-table">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="Codigo">
+                    <th mat-header-cell *matHeaderCellDef> Código </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="Descripcion">
+                    <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="columnasVarias"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnasVarias;"></tr>
+
+            </table>
+        </div>
+    </mat-card>
+</div>
+
+
+<!-- Tipos Contrato -->
+<div class="allTable">
+    <mat-card class="tableCard">
+
+        <mat-card-title class="titulo">Tipos Contrato</mat-card-title>
+
+
+        <div class="tabla">
+            <table mat-table [dataSource]="tiposContrato" class="fl-table">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="Codigo">
+                    <th mat-header-cell *matHeaderCellDef> Código </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="Descripcion">
+                    <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="columnasVarias"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnasVarias;"></tr>
+
+            </table>
+        </div>
+    </mat-card>
+</div>
+
+<!-- Tipos Comision -->
+    <div class="allTable">
+        <mat-card class="tableCard">
+
+            <mat-card-title class="titulo">Tipos Comision</mat-card-title>
+
+
+            <div class="tabla">
+                <table mat-table [dataSource]="tiposComision" class="fl-table">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef> Código </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="columnasVarias"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnasVarias;"></tr>
+
+                </table>
+            </div>
+        </mat-card>
+    </div>
+
+<!-- Tipo Vacaciones -->
+    <div class="allTable">
+        <mat-card class="tableCard">
+
+            <mat-card-title class="titulo">Tipo Vacaciones</mat-card-title>
+
+
+            <div class="tabla">
+                <table mat-table [dataSource]="tipoVacaciones" class="fl-table">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef> Código </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="columnasVarias"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnasVarias;"></tr>
+
+                </table>
+            </div>
+        </mat-card>
+    </div>
+
+<!-- esReingreso -->
+    <div class="allTable">
+        <mat-card class="tableCard">
+
+            <mat-card-title class="titulo">Es Reingreso</mat-card-title>
+
+
+            <div class="tabla">
+                <table mat-table [dataSource]="esReingreso" class="fl-table">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef> Código </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="columnasVarias"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnasVarias;"></tr>
+
+                </table>
+            </div>
+        </mat-card>
+    </div>
+
+<!-- tiposCuenta -->
+    <div class="allTable">
+        <mat-card class="tableCard">
+
+            <mat-card-title class="titulo">Tipos Cuenta</mat-card-title>
+
+
+            <div class="tabla">
+                <table mat-table [dataSource]="tiposCuenta" class="fl-table">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef> Código </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="columnasVarias"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnasVarias;"></tr>
+
+                </table>
+            </div>
+        </mat-card>
+    </div>
+</div>

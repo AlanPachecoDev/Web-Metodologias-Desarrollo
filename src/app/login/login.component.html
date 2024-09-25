@@ -1,0 +1,58 @@
+<body id="particles-js"></body>
+<div class="animated bounceInDown">
+  <div class="container">
+    <span class="error animated tada" id="msg"></span>
+    <form name="form1" class="box" onsubmit="return checkStuff()" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <h1>Administración Sistema Nómina<span></span></h1>
+      <h5>Ingrese a su cuenta</h5>
+        <!-- <input type="text" name="email" placeholder="Usuario" autocomplete="off"> -->
+        <input type="text" matInput placeholder="Usuario" [(ngModel)]="username" name="username" required>
+        <i class="typcn typcn-eye" id="eye"></i>
+        <!-- <input type="password" name="password" placeholder="Contraseña" id="pwd" autocomplete="off"> -->
+        <input type="password" matInput placeholder="Contraseña" [(ngModel)]="password" name="password" type="password" required>
+        <div class="selector">
+          <select [(ngModel)]="emisorSeleccionado" (change)="onEmisorSeleccionado()" name="emisor">
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option *ngFor="let emisor of emisores" [ngValue]="emisor">{{ emisor.Codigo }} - {{ emisor.NombreEmisor }}</option>
+          </select>
+        </div>
+        <input mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid"  class="btn1">
+      </form>
+
+  </div> 
+
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+  <div class="burbuja2"></div>
+
+
+</div>

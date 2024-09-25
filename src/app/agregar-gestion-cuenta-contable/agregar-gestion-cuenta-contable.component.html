@@ -1,0 +1,74 @@
+<div class="cardContainer cardContainerAdd">
+    <div class="containerAdd">
+
+
+        <mat-card class="tableCard">
+            <form>
+                <div class="inputs">
+                    <h1>Crear gestión de cuenta contable</h1>
+                    <div class="inputsSideContainer">
+                        <div class="inputsSide">
+                            <mat-form-field>
+                                <mat-label>CodigoConceptoNomina</mat-label>
+                                <input name="codigo" matInput [(ngModel)]="element.CodigoConceptoNomina"
+                                    placeholder="Codigo Concepto Nomina" value="0">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Código Categoría Ocupación</mat-label>
+                                <mat-select [(ngModel)]="element.CodigoCategoriaOcupacional"
+                                    placeholder="Código Categoría Ocupación" name="CodigoCategoriaOcupacional">
+                                    <mat-option *ngFor="let codigoCO of categoriasOcupaciones"
+                                        [value]="codigoCO.Codigo">
+                                        {{codigoCO.Descripcion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+
+
+                        <div class="inputsSide">
+
+                            <mat-form-field>
+                                <mat-label>Código Operación</mat-label>
+                                <mat-select [(ngModel)]="element.CodigoOperacion" placeholder="Código Operación"
+                                    name="CodigoOperacion">
+                                    <mat-option *ngFor="let codigoC of tipoOperacion"
+                                        [value]="codigoC.CodigoTipooperacion">
+                                        {{codigoC.NombreOperacion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Código Cuenta</mat-label>
+                                <input name="codigoCuenta" matInput [(ngModel)]="element.CodigoCuenta"
+                                    placeholder="Codigo Cuenta" value="0">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Código Tipo Cuenta</mat-label>
+                                <mat-select [(ngModel)]="element.CodigoTipoCuenta" placeholder="Código Tipo Cuenta"
+                                    name="CodigoTipoCuenta">
+                                    <mat-option *ngFor="let codigoTC of codigoTipoCuenta" [value]="codigoTC.Codigo">
+                                        {{codigoTC.Descripcion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+
+                    </div>
+                    <div class="botonagregar">
+                        <button style="background-color: #79a6fe; color: white;" class="agregarbutton" mat-raised-button
+                            focusable="false" (click)="crearNuevoCC()">
+                            <mat-icon>add_circle_outline</mat-icon>
+                            Agregar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

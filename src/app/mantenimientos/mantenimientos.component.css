@@ -1,0 +1,259 @@
+.tableCard {
+  /* all: unset; */
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  width: 80%;
+  margin: 0 8px 16px;
+  margin: 2%;
+  display: flex;
+  /* flex-direction: row;
+      justify-content: center; */
+  line-height: 24px;
+  flex-direction: column;
+
+}
+
+.cardContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #3b476b;
+}
+
+.contenedorOpciones {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 3%;
+}
+
+.inputsBusqueda {
+  margin: 2% auto;
+  background: transparent;
+  border-radius: 5px;
+  border-style: double;
+  padding: 1em;
+  width: 80%;
+  color: #0e0a0a;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+
+
+
+.btn2 {
+  border: 0;
+  border-radius: 100px;
+  width: 340px;
+  height: 49px;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-bottom: 6%;
+
+}
+
+.closeBtn {
+  position: absolute;
+  margin-left: 2%;
+  border-radius: 50px;
+  margin-top: -70px;
+}
+
+.closeBtn {
+  position: fixed;
+  top: 22%;
+  left: 10%;
+  z-index: 5;
+
+
+}
+
+.btn3 {
+  /* border-radius: 5px; */
+  color: #262e49;
+  width: 110px;
+  height: 43px;
+  font-size: 14px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.contenedorOpciones2 {
+  justify-content: flex-end;
+  display: flex;
+  margin-top: 10px;
+
+}
+
+/*Tabla de contenidos*/
+
+@import url("https://fonts.googleapis.com/css?family=Amarante");
+
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-top: 25px;
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.busqueda {
+  display: flex;
+  /* flex-direction: row; */
+  /* margin-left: 490px; */
+  margin-left: 10vh;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.fl-table {
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: auto;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: white;
+}
+
+.fl-table td,
+.fl-table th {
+  text-align: center;
+  padding: 8px;
+
+}
+
+.fl-table td {
+  border-right: 1px solid #f8f8f8;
+  font-size: 12px;
+}
+
+.fl-table th {
+  color: #ffffff;
+  background: #324960;
+  /* background: #79a6fe; */
+}
+
+.fl-table th:nth-child(odd) {
+  color: #ffffff;
+  background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+
+.atras {
+  width: 10px;
+  background-color: transparent;
+  border: transparent;
+}
+
+.tableCard {
+  overflow-x: auto;
+}
+
+
+@media (max-width: 768px) {
+  .inputsBusqueda {
+    width: 100%;
+  }
+
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* Para dispositivos móviles */
+@media (max-width: 480px) {
+
+  /* Estilos para pantallas de hasta 480px de ancho */
+  .inputsBusqueda {
+    width: 100%;
+  }
+
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn2 {
+    font-size: 14px;
+    /* Ajusta el tamaño de la fuente */
+    padding: 8px 16px;
+    /* Ajusta el relleno del botón */
+  }
+}
+
+
+
+/* Para pantallas más grandes */
+@media (max-width: 1024px) {
+
+  /* Estilos para pantallas de hasta 1024px de ancho */
+  .inputsBusqueda {
+    width: 100%;
+  }
+
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Para pantallas aún más grandes */
+@media (max-width: 1200px) {
+
+  /* Estilos para pantallas de hasta 1200px de ancho */
+  .inputsBusqueda {
+    width: 100%;
+  }
+
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+.allTable {
+  width: 100%;
+  height: 300px;
+  justify-content: center;
+  display: flex;
+}

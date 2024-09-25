@@ -1,0 +1,30 @@
+<div class="cardContainer">
+    <mat-card class="tableCard">
+        <button class="atras" (click)="navegarAtras()">
+            <mat-icon class="flecha-icon">arrow_backward</mat-icon>
+        </button>
+        <form>
+            <div class="titulo">
+                <h1>Editar centro de costo</h1>
+            </div>
+            <div class="inputs">
+
+                <mat-form-field>
+                    <mat-label>Edita el nombre del centro de costos</mat-label>
+                    <input name="nombreCentroCostos" matInput [(ngModel)]="element.NombreCentroCostos"
+                        placeholder="Nombre Centro Costos" value="{{element.NombreCentroCostos}}">
+                </mat-form-field>
+
+            </div>
+            <div class="contenedorOpciones2">
+                <button mat-raised-button style="background-color: #79a6fe; color: white;" type="submit"
+                    focusable="false" (click)="editar()" class="btn2">
+                    <mat-icon fontIcon="save">Editar</mat-icon>
+                    Guardar
+                </button>
+            </div>
+
+
+        </form>
+    </mat-card>
+</div>

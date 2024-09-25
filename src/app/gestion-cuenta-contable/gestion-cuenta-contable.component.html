@@ -1,0 +1,132 @@
+<!-- Para que el agregar se muestre como un componente encima del resto -->
+
+<div *ngIf="mostrarAgregar">
+    <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()" style="background-color: #79a6fe; color: white;">
+        X
+    </button>
+    <app-agregar-gestion-cuenta-contable></app-agregar-gestion-cuenta-contable>
+</div>
+
+<div *ngIf="mostrarEditar">
+    <button class="closeBtn" mat-raised-button focusable="false" (click)="showEditar()" style="background-color: #79a6fe; color: white;">
+        X
+    </button>
+    <app-editar-gestion-cuenta-contable [element]="elementToEdit"></app-editar-gestion-cuenta-contable>
+</div>
+
+
+
+
+<div class="cardContainer">
+
+    <mat-card class="tableCard">
+        <button class="atras" (click)="navegarAtras()">
+            <mat-icon class="flecha-icon" >arrow_backward</mat-icon>
+          </button>
+        <mat-card-title class="titulo">Lista de Gestión Cuenta Contable Nómina</mat-card-title>
+        <div class="contenedorOpciones">
+
+            <form>
+
+                <!-- <div class="inputs"> -->
+                <!-- <h1>Editar centro de costo</h1> -->
+                <div class="search">
+                    <div class="busqueda">
+                        <input class="inputsBusqueda" type="text" matInput placeholder="Buscar Cuenta Contable"
+                            [(ngModel)]="busquedaConcepto" name="nombreCentroCostos" required>
+
+                        <div class="buscador">
+                            <button mat-raised-button color="edit" type="submit" focusable="false" (click)="buscar()"
+                                class="btn3">
+                                <mat-icon fontIcon="search">Buscar</mat-icon>
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="contenedorOpciones2">
+
+                <button mat-raised-button style="background-color: #79a6fe; color: white;" type="submit" focusable="false"
+                    (click)="showAdd()" class="btn2">
+                    + Agregar Gestión Cuenta Contable
+                </button>
+            </div>
+        </div>
+
+        <div style="max-height: 500px; overflow-y: auto;">
+            <table mat-table [dataSource]="gcs" class="fl-table">
+                <!-- Position Column -->
+                <ng-container matColumnDef="CodigoConceptoNomina">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CodigoConceptoNomina}} </td>
+                </ng-container>
+                <!-- Prioridad Column -->
+                <ng-container matColumnDef="DescripcionConcepto">
+                    <th mat-header-cell *matHeaderCellDef> Descripción Concepto </th>
+                    <td mat-cell *matCellDef="let element"> {{element.DescripcionConcepto}} </td>
+
+                </ng-container>
+
+                <!-- Concepto Column -->
+                <ng-container matColumnDef="CodigoCategoriaocupacional">
+                    <th mat-header-cell *matHeaderCellDef> Código Categoría Ocupacional </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CodigoCategoriaocupacional}} </td>
+
+                </ng-container>
+                
+                <!-- TipoOperacion Column -->
+                <ng-container matColumnDef="CodigoOperacion">
+                    <th mat-header-cell *matHeaderCellDef> Código Operación </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CodigoOperacion}} </td>
+
+                </ng-container>
+
+                <!-- Cuenta1 Column -->
+                <ng-container matColumnDef="CodigoCuentaContable">
+                    <th mat-header-cell *matHeaderCellDef> Código Cuenta Contable </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CodigoCuentaContable}} </td>
+
+                </ng-container>
+                <!-- Aplica_iess Column -->
+                <ng-container matColumnDef="CodigoTipoCuenta">
+                    <th mat-header-cell *matHeaderCellDef> Código Tipo Cuenta </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CodigoTipoCuenta}} </td>
+
+                </ng-container>
+                <!-- Aplica_imp_renta Column -->
+                <ng-container matColumnDef="DescripcionCuenta">
+                    <th mat-header-cell *matHeaderCellDef> Descripción Cuenta </th>
+                    <td mat-cell *matCellDef="let element"> {{element.DescripcionCuenta}} </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="Editar">
+                    <th mat-header-cell *matHeaderCellDef> Edición </th>
+                    <td mat-cell *matCellDef="let element;">
+                        <button mat-raised-button color="edit" focusable="false" (click)="showEditar(element)">
+                            <mat-icon fontIcon="edit">Editar</mat-icon>
+                            Editar
+                        </button>
+                    </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="Borrar">
+                    <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                    <td mat-cell *matCellDef="let element;">
+                        <button mat-raised-button color="warn" focusable="false" (click)="btnBorrar(element)">
+                            <mat-icon fontIcon="delete">Borrar</mat-icon>
+                            Borrar
+                        </button>
+                    </td>
+                </ng-container>
+
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            </table>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,173 @@
+<div *ngIf="mostrarAgregar">
+    <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()" style="background-color: #79a6fe; color: white;">
+        X
+    </button>
+    <app-agregar-trabajador></app-agregar-trabajador>
+</div>
+
+<div *ngIf="mostrarEditar">
+    <button class="closeBtn" mat-raised-button focusable="false" (click)="showEdit()" style="background-color: #79a6fe; color: white;">
+        X
+    </button>
+    <app-editar-trabajador [element]="elementToEdit"></app-editar-trabajador>
+</div>
+
+
+
+<div class="cardContainer">
+
+    <mat-card class="tableCard">
+        <button class="atras" (click)="navegarAtras()">
+            <mat-icon class="flecha-icon">arrow_backward</mat-icon>
+        </button>
+        <mat-card-title class="titulo">Lista de Trabajadores</mat-card-title>
+        <div class="contenedorOpciones">
+
+            <form>
+
+                <!-- <div class="inputs"> -->
+                <!-- <h1>Editar centro de costo</h1> -->
+                <div class="search">
+                    <div class="busqueda">
+                        <input class="inputsBusqueda" type="text" matInput placeholder="Buscar Trabajador"
+                            [(ngModel)]="busquedaTrabajador" name="nombreCentroCostos" required>
+
+                        <div class="buscador">
+                            <button mat-raised-button color="edit" type="submit" focusable="false" (click)="buscar()"
+                                class="btn3">
+                                <mat-icon fontIcon="search">Buscar</mat-icon>
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="contenedorOpciones2">
+                <button mat-raised-button style="background-color: #79a6fe;color:white" type="submit" focusable="false"
+                    (click)="showAdd()" class="btn2">
+                    + Agregar Trabajador
+                </button>
+            </div>
+            
+        </div>
+
+        <div class="tabla">
+            <table mat-table [dataSource]="trabajadores" class="fl-table">
+                <ng-container matColumnDef="COMP_Codigo">
+                    <th mat-header-cell *matHeaderCellDef> COMP_Codigo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.COMP_Codigo}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Id_Trabajador">
+                    <th mat-header-cell *matHeaderCellDef> ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Id_Trabajador}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Tipo_trabajador">
+                    <th mat-header-cell *matHeaderCellDef> Tipo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Tipo_trabajador}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Apellido_Paterno">
+                    <th mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Apellido_Paterno}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Apellido_Materno">
+                    <th mat-header-cell *matHeaderCellDef> Apellido Materno </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Apellido_Materno}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Nombres">
+                    <th mat-header-cell *matHeaderCellDef> Nombres </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Nombres}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Identificacion">
+                    <th mat-header-cell *matHeaderCellDef> Identificación </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Identificacion}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Entidad_Bancaria">
+                    <th mat-header-cell *matHeaderCellDef> Entidad Bancaria </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Entidad_Bancaria}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="CarnetIESS">
+                    <th mat-header-cell *matHeaderCellDef> Carnet IESS </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CarnetIESS}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Direccion">
+                    <th mat-header-cell *matHeaderCellDef> Dirección </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Direccion}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Telefono Fijo">
+                    <th mat-header-cell *matHeaderCellDef> Teléfono Fijo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Telefono_Fijo}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Telefono Movil">
+                    <th mat-header-cell *matHeaderCellDef> Teléfono Móvil </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Telefono_Movil}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Genero">
+                    <th mat-header-cell *matHeaderCellDef> Género </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Genero}} </td>
+                </ng-container>Nro_Cuenta_Bancaria
+
+                <ng-container matColumnDef="Nro_Cuenta_Bancaria">
+                    <th mat-header-cell *matHeaderCellDef> Cuenta Bancaria </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Nro_Cuenta_Bancaria}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Ocupacion">
+                    <th mat-header-cell *matHeaderCellDef> Ocupación </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Ocupacion}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="FechaIngreso">
+                    <th mat-header-cell *matHeaderCellDef> Fecha Ingreso </th>
+                    <td mat-cell *matCellDef="let element"> {{element.FechaIngreso}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Tipo_Contrato">
+                    <th mat-header-cell *matHeaderCellDef> Tipo Contrato </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Tipo_Contrato}} </td>
+                </ng-container>
+
+
+
+                <ng-container matColumnDef="Borrar">
+                    <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                    <td mat-cell *matCellDef="let element;">
+                        <button mat-raised-button color="warn" focusable="false" (click)="btnBorrar(element)">
+                            <mat-icon fontIcon="delete">Borrar</mat-icon>
+                            Borrar
+                        </button>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Editar">
+                    <th mat-header-cell *matHeaderCellDef> Edición </th>
+                    <td mat-cell *matCellDef="let element;">
+                        <button mat-raised-button color="edit" focusable="false" (click)="showEdit(element)">
+                            <mat-icon fontIcon="edit">Editar</mat-icon>
+                            Editar
+                        </button>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+
+            </table>
+
+        </div>
+
+    </mat-card>
+</div>

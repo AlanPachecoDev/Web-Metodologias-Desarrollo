@@ -1,0 +1,218 @@
+<div class="cardContainer cardContainerAdd">
+    <div class="containerAdd">
+
+
+        <mat-card class="tableCard">
+            <form>
+                <div class="inputs">
+                    <h1>Crear movimiento de planilla</h1>
+                    <div class="inputsSideContainer">
+                        <div class="inputsSide">
+                            <mat-form-field>
+                                <mat-label>Conceptos</mat-label>
+                                <input name="codigo" matInput [(ngModel)]="element.Concepto" placeholder="Conceptos"
+                                    value="Concepto">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Prioridad</mat-label>
+                                <input name="Prioridad" matInput [(ngModel)]="element.Prioridad" placeholder="Prioridad"
+                                    value="{{element.Prioridad}}">
+                            </mat-form-field>
+
+                            <!-- ---------------------------- -->
+                            <!-- <mat-form-field>
+                                <mat-label>TipoOperacion</mat-label>
+                                <input name="TipoOperacion" matInput [(ngModel)]="element.TipoOperacion"
+                                    placeholder="TipoOperacion" value="{{element.TipoOperacion}}">
+                            </mat-form-field> -->
+
+                            <mat-form-field>
+                                <mat-label>Tipo Operación</mat-label>
+                                <mat-select [(ngModel)]="element.TipoOperacion" placeholder="Tipo Operacion"
+                                    (selectionChange)="actualizarValor('TipoOperacion', $event.value)"
+                                    name="TipoOperacion">
+                                    <mat-option *ngFor="let tipoOperacion of tiposOperaciones"
+                                        [value]="tipoOperacion.CodigoTipooperacion">
+                                        {{tipoOperacion.CodigoTipooperacion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                            <mat-form-field>
+                                <mat-label>Cuenta1</mat-label>
+                                <input name="Cuenta1" matInput [(ngModel)]="element.Cuenta1" placeholder="Cuenta1"
+                                    value="{{element.Cuenta1}}">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Cuenta2</mat-label>
+                                <input name="Cuenta2" matInput [(ngModel)]="element.Cuenta2" placeholder="Cuenta2"
+                                    value="{{element.Cuenta2}}">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Cuenta3</mat-label>
+                                <input name="Cuenta3" matInput [(ngModel)]="element.Cuenta3" placeholder="Cuenta3"
+                                    value="{{element.Cuenta3}}">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Cuenta4</mat-label>
+                                <input name="Cuenta4" matInput [(ngModel)]="element.Cuenta4" placeholder="Cuenta4"
+                                    value="{{element.Cuenta4}}">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="inputsSide">
+
+                            <!-- <mat-form-field>
+                                <mat-label>MovimientoExcepcion1</mat-label>
+                                <input name="MovimientoExcepcion1" matInput [(ngModel)]="element.MovimientoExcepcion1"
+                                    placeholder="MovimientoExcepcion1" value="{{element.MovimientoExcepcion1}}">
+                            </mat-form-field> -->
+
+                            <mat-form-field>
+                                <mat-label>Movimiento Excepción 1</mat-label>
+                                <mat-select [(ngModel)]="element.MovimientoExcepcion1"
+                                    placeholder="Movimiento Excepcion 1"
+                                    (selectionChange)="actualizarValor('MovimientoExcepcion1', $event.value)"
+                                    name="MovimientoExcepcion1">
+                                    <mat-option *ngFor="let movimientoExcepcion of movimientosExcepcion12"
+                                        [value]="movimientoExcepcion.CodigoMovimientoExce">
+                                        {{movimientoExcepcion.CodigoMovimientoExce}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <!-- <mat-form-field>
+                                <mat-label>MovimientoExcepcion2</mat-label>
+                                <input name="MovimientoExcepcion2" matInput [(ngModel)]="element.MovimientoExcepcion2"
+                                    placeholder="MovimientoExcepcion2" value="{{element.MovimientoExcepcion2}}">
+                            </mat-form-field> -->
+
+                            <mat-form-field>
+                                <mat-label>Movimiento Excepción 2</mat-label>
+                                <mat-select [(ngModel)]="element.MovimientoExcepcion2"
+                                    placeholder="Movimiento Excepcion 2"
+                                    (selectionChange)="actualizarValor('MovimientoExcepcion2', $event.value)"
+                                    name="MovimientoExcepcion2">
+                                    <mat-option *ngFor="let movimientoExcepcion of movimientosExcepcion12"
+                                        [value]="movimientoExcepcion.CodigoMovimientoExce">
+                                        {{movimientoExcepcion.CodigoMovimientoExce}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                            <!-- <mat-form-field>
+                                <mat-label>MovimientoExcepcion3</mat-label>
+                                <input name="MovimientoExcepcion3" matInput [(ngModel)]="element.MovimientoExcepcion3"
+                                    placeholder="MovimientoExcepcion3" value="{{element.MovimientoExcepcion3}}">
+                            </mat-form-field> -->
+
+
+                            <mat-form-field>
+                                <mat-label>Movimiento Excepción 3</mat-label>
+                                <mat-select [(ngModel)]="element.MovimientoExcepcion3"
+                                    placeholder="Movimiento Excepcion 3"
+                                    (selectionChange)="actualizarValor('MovimientoExcepcion3', $event.value)"
+                                    name="MovimientoExcepcion3">
+                                    <mat-option *ngFor="let movimientoExcepcion of movimientosExcepcion3"
+                                        [value]="movimientoExcepcion.CodigoMovimientoExce">
+                                        {{movimientoExcepcion.CodigoMovimientoExce}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                            <!-- <mat-form-field>
+                                <mat-label>Traba_Aplica_iess</mat-label>
+                                <input name="Traba_Aplica_iess" matInput [(ngModel)]="element.Traba_Aplica_iess"
+                                    placeholder="Traba_Aplica_iess" value="{{element.Traba_Aplica_iess}}">
+                            </mat-form-field> -->
+
+
+                            <mat-form-field>
+                                <mat-label>Trabajador Aplica IESS</mat-label>
+                                <mat-select [(ngModel)]="element.Traba_Aplica_iess" placeholder="Traba_Aplica_iess"
+                                    (selectionChange)="actualizarValor('Traba_Aplica_iess', $event.value)"
+                                    name="Trabajador Aplica IESS">
+                                    <mat-option *ngFor="let Traba_Aplica_iess of opcionesTraba_Aplica_iess"
+                                        [value]="Traba_Aplica_iess.CodigoMovimientoExce">
+                                        {{Traba_Aplica_iess.CodigoMovimientoExce}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                            <!-- <mat-form-field>
+                                <mat-label>Traba_Proyecto_imp_renta</mat-label>
+                                <input name="Traba_Proyecto_imp_renta" matInput
+                                    [(ngModel)]="element.Traba_Proyecto_imp_renta"
+                                    placeholder="Traba_Proyecto_imp_renta" value="{{element.Traba_Proyecto_imp_renta}}">
+                            </mat-form-field> -->
+
+                            <mat-form-field>
+                                <mat-label>Trabajador Proyecto Impuesto Renta</mat-label>
+                                <mat-select [(ngModel)]="element.Traba_Proyecto_imp_renta"
+                                    placeholder="Trabajador Proyecto Impuesto Renta"
+                                    (selectionChange)="actualizarValor('Traba_Proyecto_imp_renta', $event.value)"
+                                    name="Traba_Proyecto_imp_renta">
+                                    <mat-option *ngFor="let Traba_Proyecto_imp_renta of opcionesTrabAfecImpuestoRenta"
+                                        [value]="Traba_Proyecto_imp_renta.CodigoMovimientoExce">
+                                        {{Traba_Proyecto_imp_renta.CodigoMovimientoExce}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                            <!-- <mat-form-field>
+                                <mat-label>Aplica_Proy_Renta</mat-label>
+                                <input name="Aplica_Proy_Renta" matInput [(ngModel)]="element.Aplica_Proy_Renta"
+                                    placeholder="Aplica_Proy_Renta" value="{{element.Aplica_Proy_Renta}}">
+                            </mat-form-field> -->
+
+                            <mat-form-field>
+                                <mat-label>Aplica Proy Renta</mat-label>
+                                <mat-select [(ngModel)]="element.Aplica_Proy_Renta" placeholder="Aplica Proy Renta"
+                                    (selectionChange)="actualizarValor('Aplica_Proy_Renta', $event.value)"
+                                    name="Aplica_Proy_Renta">
+                                    <mat-option value="Si">Si</mat-option>
+                                    <mat-option value="No">No</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                            <!-- <mat-form-field>
+                                <mat-label>Empresa_Afecta_Iess</mat-label>
+                                <input name="Empresa_Afecta_Iess" matInput [(ngModel)]="element.Empresa_Afecta_Iess"
+                                    placeholder="Empresa_Afecta_Iess" value="{{element.Empresa_Afecta_Iess}}">
+                            </mat-form-field> -->
+
+                            <mat-form-field>
+                                <mat-label>Empresa Afecta IESS</mat-label>
+                                <mat-select [(ngModel)]="element.Empresa_Afecta_Iess" placeholder="Empresa Afecta IESS"
+                                    (selectionChange)="actualizarValor('Empresa_Afecta_Iess', $event.value)"
+                                    name="Empresa_Afecta_Iess">
+                                    <mat-option value="Si">Si</mat-option>
+                                    <mat-option value="No">No</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="botonagregar">
+                        <button style="background-color: #79a6fe; color: white;" class="agregarbutton" mat-raised-button
+                            focusable="false" (click)="crearNuevoCC()">
+                            <mat-icon>add_circle_outline</mat-icon>
+                            Agregar
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="cardContainer cardContainerAdd">
+    <div class="containerAdd">
+
+        <mat-card class="tableCard">
+            <form>
+                <div class="inputs">
+                    <img class="centro" src="assets/images/Centro-de-costos.png">
+                    <div class="titulo">
+                        <h1>Crear centro de costo</h1>
+                    </div>
+                    <mat-form-field>
+                        <mat-label>Ingresar el código</mat-label>
+                        <input name="codigo" matInput [(ngModel)]="element.Codigo" placeholder="Codigo"
+                            value="{{element.Codigo}}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Ingresar el nombre del centro de costos</mat-label>
+                        <input name="nombreCentroCostos" matInput [(ngModel)]="element.NombreCentroCostos"
+                            placeholder="Nombre Centro Costos" value="{{element.NombreCentroCostos}}">
+                    </mat-form-field>
+
+                    <button style="background-color: #79a6fe; color: white;" class="agregarbutton" mat-raised-button
+                        focusable="false" (click)="crearNuevoCC()">
+                        <mat-icon>add_circle_outline</mat-icon>
+                        Agregar
+                    </button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<!-- <div class="cardContainer cardContainerAdd">
+    <div class="containerAdd">
+
+
+        <mat-card class="tableCard">
+            <button class="atras" (click)="navegarAtras()">
+                <mat-icon class="flecha-icon">arrow_backward</mat-icon>
+            </button>
+            <form>
+                
+            </form>
+        </mat-card>
+    </div>
+</div> -->
+
+
+
+
+<div class="cardContainer cardContainerAdd">
+    <div class="containerAdd">
+
+
+        <mat-card class="tableCard">
+            <form>
+                <div class="inputs">
+                    <h1>Editar gestión de cuenta contable</h1>
+                    <div class="inputsSideContainer">
+                        <div class="inputsSide">
+                            <mat-form-field>
+                                <mat-label>CodigoConceptoNomina</mat-label>
+                                <input name="codigo" matInput [(ngModel)]="element.CodigoConceptoNomina"
+                                    placeholder="Codigo Concepto Nomina" [value]="element.CodigoConceptoNomina">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Código Categoría Ocupación</mat-label>
+                                <mat-select [(ngModel)]="element.CodigoCategoriaOcupacional"
+                                    placeholder="Código Categoría Ocupación" name="CodigoCategoriaOcupacional">
+                                    <mat-option *ngFor="let codigoCO of categoriasOcupaciones"
+                                        [value]="codigoCO.Codigo">
+                                        {{codigoCO.Descripcion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                            <mat-form-field>
+                                <mat-label>Código Operación</mat-label>
+                                <mat-select [(ngModel)]="element.CodigoOperacion" placeholder="Código Operación"
+                                    name="CodigoOperacion">
+                                    <mat-option *ngFor="let codigoC of tipoOperacion"
+                                        [value]="codigoC.CodigoTipooperacion">
+                                        {{codigoC.NombreOperacion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Código Cuenta</mat-label>
+                                <input name="codigoCuenta" matInput [(ngModel)]="element.CodigoCuentaContable"
+                                    placeholder="Codigo Cuenta" [value]="element.CodigoCuentaContable">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Código Tipo Cuenta</mat-label>
+                                <mat-select [(ngModel)]="element.CodigoTipoCuenta" placeholder="Código Tipo Cuenta"
+                                    name="CodigoTipoCuenta">
+                                    <mat-option *ngFor="let codigoTC of codigoTipoCuenta" [value]="codigoTC.Codigo">
+                                        {{codigoTC.Descripcion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="contenedorOpciones2">
+                        <button mat-raised-button style="background-color: #79a6fe; color: white;" type="submit"
+                            focusable="false" (click)="editarMovimientoPlanilla()" class="btn2">
+                            <mat-icon fontIcon="save">Actualizar</mat-icon>
+                            Guardar
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+.cardContainerAdd {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  transform: translate(0%, 25%);
+  z-index: 2;
+ }
+
+.containerAdd {
+  width: 75%;
+  height: 110%;
+  background-color: rgba(87, 87, 87, 0.884);  
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.tableCard {
+  /* all: unset; */
+  border-radius: 10px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  width: 80%;
+  margin: 0 8px 16px;
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  /* flex-direction: row;
+    justify-content: center; */
+  line-height: 24px;
+  height: 90%;
+  
+}
+
+.titulo {
+   justify-content: center;   
+   height: 40px;
+   margin-bottom: 10%;
+}
+
+.inputs {
+  margin: 5%;
+  width: 70%;
+  height: 75%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+
+.agregarbutton {
+  border: 0;
+  color: #dfdeee;
+  border-radius: 100px;
+  width: 340px;
+  height: 49px;
+  font-size: 16px;
+  position: absolute;
+  top: 60%;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s;
+  margin-left: 14%;
+  cursor: pointer;
+  margin-top: 15%;
+}
+
+.h1 {
+  font-size: xx-large;  
+}
+
+.centro {
+  height: 35%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin-left: 35%;
+}

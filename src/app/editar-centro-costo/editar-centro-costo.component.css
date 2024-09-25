@@ -1,0 +1,65 @@
+.tableCard {
+  /* all: unset; */
+  border-radius: 10px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  width: 40%;
+  height: 250px;
+  margin: 0 8px 16px;
+  margin: 2%;
+  display: flex;
+  /* flex-direction: row;
+    justify-content: center; */
+  line-height: 24px;
+  justify-items: center;
+
+}
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #3b476b;
+  height: 100%;
+
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 10px;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  margin-top: 2%;
+
+}
+
+.contenedorOpciones2 {
+  justify-content: center;
+  display: flex;
+
+}
+
+.btn2 {
+  border: 0;
+  border-radius: 100px;
+  width: 200px;
+  height: 49px;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+
+}
+
+.atras {
+  width: 10px;
+  background-color: transparent;
+  border: transparent;
+}
